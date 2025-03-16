@@ -70,7 +70,6 @@ VibeTune is a Django-based music streaming application that allows users to uplo
 - **Sign Up**: Create an account.  
 - **Login**: Access the platform.  
 - **Browse Songs**: View and play available songs.  
-- **Song Details**: View song information before playing.  
 - **Watchlater**: Save songs for future listening.  
 - **Upload**: Upload and share music with others.  
 
@@ -92,11 +91,6 @@ VibeTune/
 ```
 
 ## Demo
-
-A working demonstration of the project is available at:  
-[Live Demo](#)  
-
-Alternatively, see the example preview below:  
 
 ![VibeTune Demo](demo.gif)
 
