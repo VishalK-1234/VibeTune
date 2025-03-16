@@ -1,0 +1,27 @@
+{% extends 'myapp/basic.html' %}
+{% block title %}All Songs{% endblock %}
+
+{% block body %}
+
+<h2 style="text-align: center; padding-top: 2%; margin-bottom: 2%; color: rgb(88, 171, 133);">All Your Songs are Listed Here</h2>
+
+<div class="container">
+
+{% for i in song reversed %}
+
+<div class="card mb-3" style="max-width: 940px; padding-top: 0%; margin-top: 15px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" style="color: green; font-weight: 550;">{{ i.name }}</h5>
+          <a href="/myapp/songs/{{ i.song_id }}"><button class="btn btn-outline-danger">Listen Song</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{%extends 'myapp/basic.html'%}
+{% block title%}Play Song{% endblock %}
+
+{% block body %}
+
+{% if message%}
+<script>
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '{{message}}',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    </script>
+{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="padding-top: 3%;">
+            <img src="/media/{{song.image}}" height="400px" width="400px">
+        </div>
+        <div class="col-md-6">
+            <h2 style="padding-top: 6%; font-weight: 550; color: rgb(0, 0, 0);">Title: <span style="color: rgb(244, 3, 175);">{{song.name}}</span></h2>
+
+                <audio controls style="padding-top: 2%;">
+                    <source src="/media/{{song.song}}" type="audio/mp3">
+                </audio>
+
+            <div style="padding-top: 2%;">
+
+            <div class="row" style="padding-left: 3%;">
+            <form action="/myapp/watchlater" method="POST">{% csrf_token %}
+            <input type="hidden" name="video_id" value="{{song.song_id}}">
+            <button type="submit" class="btn btn-outline-danger" id="submit_btn">Add to Listen Later</button>
+            </form>
+            <a download href="/media/{{song.song}}" style="padding-left: 1%;"><button class="btn btn-outline-danger">Download Song</button></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+</script>
+
+{% endblock %}
+{% block js %}
+
+{% endblock%}
