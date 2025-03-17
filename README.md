@@ -27,10 +27,8 @@ VibeTune is a Django-based music streaming application that allows users to uplo
 2. **Create and activate a virtual environment**  
    ```sh
    python -m venv venv
-   # On Windows
-   venv\Scripts\activate
-   # On MacOS/Linux
-   source venv/bin/activate
+   venv\Scripts\activate  # On Windows
+   source venv/bin/activate  # On MacOS/Linux
    ```
 
 3. **Install dependencies**  
